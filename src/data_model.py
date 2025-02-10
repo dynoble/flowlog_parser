@@ -36,7 +36,6 @@ class FlowLogRecord(BaseModel):
 
     @model_validator(mode='after')
     def check_version(self):
-        version = self.version
-        if FLOW_LOG_VERSION != version:
-            raise ValueError(f'Unexpected flow log version : {version}, expected: {FLOW_LOG_VERSION}')
+        if self.version != FLOW_LOG_VERSION:
+            raise ValueError(f'Unexpected flow log version : {self.version}, expected: {FLOW_LOG_VERSION}')
         return self

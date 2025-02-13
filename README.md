@@ -1,3 +1,5 @@
+# This module parses flow logs and tags them
+# More about flow log : https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html
 
 # execution
 python3.10 src/flowlog_parser.py -lookup test/data/lookup_data.txt -flowlog test/data/flow_log.txt -output test/data_out/output.txt
